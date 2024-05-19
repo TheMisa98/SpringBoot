@@ -1,78 +1,41 @@
 package com.demo.classes;
 
-import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.*;
 
 @Entity
 @Table(name = "producto")
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nombre;
-    private String descripcion;
-    private BigDecimal precio;
-    private Integer cantidadDisponible;
-    private String categoria;
-    private String imageUrl;
+    private int cantidad_disponible;
 
-    // Getters
+    // Getters and setters
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public BigDecimal getPrecio() {
-        return precio;
-    }
-
-    public Integer getCantidadDisponible() {
-        return cantidadDisponible;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public int getCantidad_disponible() {
+        return cantidad_disponible;
     }
 
-    public void setPrecio(BigDecimal precio) {
-        this.precio = precio;
-    }
-
-    public void setCantidadDisponible(Integer cantidadDisponible) {
-        this.cantidadDisponible = cantidadDisponible;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setCantidad_disponible(int cantidad_disponible) {
+        this.cantidad_disponible = cantidad_disponible;
     }
 }
