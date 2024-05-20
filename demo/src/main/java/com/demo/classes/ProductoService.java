@@ -11,7 +11,7 @@ public class ProductoService {
 
     public List<Producto> getAllProductos() {
         System.out.println("Service");
-        return productoRepository.findAll();
+        return productoRepository.findByCantidadDisponibleGreaterThanZero();
     }
 
     // public Producto getProductoById(Integer id) {

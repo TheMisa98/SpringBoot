@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController()
+@RestController
 @RequestMapping("/productos")
 public class ProductoServiceController {
 
@@ -15,6 +15,12 @@ public class ProductoServiceController {
     @Autowired
     private ProductoService productoService;
 
+    @GetMapping("/test")
+    public String test(){
+        String testing = "testing";
+        return testing;
+    }
+    
     @GetMapping("/getAll")
     public List<Producto> getAllProductos() {
         logger.info("Iniciando la obtención de todos los productos...");

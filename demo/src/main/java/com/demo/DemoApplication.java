@@ -11,9 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
 @SpringBootApplication
-@EntityScan("com.demo.classes")
-@EnableJpaRepositories("com.demo.classes")
-@ComponentScan({"com.demo", "com.demo.classes"})
+@EntityScan("com.demo.classes.Producto.class")
+@EnableJpaRepositories("com.demo.classes.ProductoRepository.class")
+//Aquí debo declarar dónde se encuentra el servicio
+@ComponentScan({"com.demo.classes.ProductoService.class", "com.demo.classes.ProductoServiceController.class"})
 
 public class DemoApplication {
     
