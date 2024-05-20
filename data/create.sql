@@ -1,3 +1,4 @@
+CREATE DATABASE online_shop;
 CREATE TABLE producto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
