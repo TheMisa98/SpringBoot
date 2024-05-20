@@ -10,13 +10,19 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
-@EntityScan("com.demo.classes.*")  
-@SpringBootApplication(scanBasePackages = "com.demo.classes.*")
-@EnableJpaRepositories(basePackages = "com.demo.classes.*")
-@ComponentScan(basePackages = "com.demo.classes.*")
-public class DemoApplication {
+@SpringBootApplication
+@EntityScan("com.demo.classes")
+@EnableJpaRepositories("com.demo.classes")
+@ComponentScan({"com.demo", "com.demo.classes"})
 
+public class DemoApplication {
+    
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
 }
+
+// @EntityScan("com.demo.classes.*")  
+// @SpringBootApplication(scanBasePackages = "com.demo.classes.*")
+// @EnableJpaRepositories(basePackages = "com.demo.classes.*")
+// @ComponentScan(basePackages = "com.demo.classes.*")

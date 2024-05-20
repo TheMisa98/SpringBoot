@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController("/productos")
-// @RestController()
-// @RequestMapping("/productos")
+@RestController()
+@RequestMapping("/productos")
 public class ProductoServiceController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductoServiceController.class);
-
 
     @Autowired
     private ProductoService productoService;
@@ -25,13 +23,13 @@ public class ProductoServiceController {
         return productos;
     }
 
-    @GetMapping("/getProduct/{id}")
-    public Producto getProductoById(@PathVariable Integer id) {
-        logger.info("Iniciando la obtención del producto con ID: {}", id);
-        Producto producto = productoService.getProductoById(id);
-        logger.info("Producto obtenido: {}", producto);
-        return producto;
-    }
+    // @GetMapping("/getProduct/{id}")
+    // public Producto getProductoById(@PathVariable Integer id) {
+    //     logger.info("Iniciando la obtención del producto con ID: {}", id);
+    //     Producto producto = productoService.getProductoById(id);
+    //     logger.info("Producto obtenido: {}", producto);
+    //     return producto;
+    // }
 
     // // POST: Crear un nuevo producto
     // @PostMapping

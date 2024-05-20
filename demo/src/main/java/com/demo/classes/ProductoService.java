@@ -14,26 +14,26 @@ public class ProductoService {
         return productoRepository.findAll();
     }
 
-    public Producto getProductoById(Integer id) {
-        return productoRepository.findById(id).orElse(null);
-    }
+    // public Producto getProductoById(Integer id) {
+    //     return productoRepository.findById(id).orElse(null);
+    // }
 
-    public Producto addProducto(Producto producto) {
-        return productoRepository.save(producto);
-    }
+    // public Producto addProducto(Producto producto) {
+    //     return productoRepository.save(producto);
+    // }
 
-    public Producto updateProducto(Integer productoId, Producto updatedProducto) {
-        if (!productoRepository.existsById(productoId)) {
-            return null;
-        }
-        Producto existingProducto = productoRepository.getReferenceById(productoId);
-        return productoRepository.save(existingProducto);
-    }
+    // public Producto updateProducto(Integer productoId, Producto updatedProducto) {
+    //     if (!productoRepository.existsById(productoId)) {
+    //         return null;
+    //     }
+    //     Producto existingProducto = productoRepository.getReferenceById(productoId);
+    //     return productoRepository.save(existingProducto);
+    // }
 
-    public void deleteProducto(Integer productoId) {
-        if (!productoRepository.existsById(productoId)) {
-            return;
-        }
-        productoRepository.deleteById(productoId);
-    }
+    // public void deleteProducto(Integer productoId) {
+    //     if (!productoRepository.existsById(productoId)) {
+    //         return;
+    //     }
+    //     productoRepository.deleteById(productoId);
+    // }
 }
