@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
     // Método para consultar productos con cantidad disponible mayor que cero
-    @Query("SELECT p.nombre FROM Producto p WHERE p.cantidad_disponible > 0")
+    @Query("SELECT * FROM Producto p WHERE p.cantidad_disponible > 0")
     List<Producto> findByCantidadDisponibleGreaterThanZero();
 }
 
